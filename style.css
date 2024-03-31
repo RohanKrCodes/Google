@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(71, 71, 71, 1) 49%,
+    rgba(34, 34, 34, 1) 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.code h1 {
+  font-size: 3em;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  animation: glowing 2s infinite alternate;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff33cc,
+      0 0 30px #ff33cc, 0 0 40px #ff33cc, 0 0 55px #ff33cc, 0 0 75px #ff33cc;
+  }
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #ff33cc,
+      0 0 40px #ff33cc, 0 0 50px #ff33cc, 0 0 70px #ff33cc, 0 0 90px #ff33cc;
+  }
+}
+
+#searchForm {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#searchInput {
+  padding: 10px;
+  border-radius: 10px;
+  width: 60vw;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  padding: 14px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(17, 98, 250);
+  border: 1px solid rgb(47, 47, 250);
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(51, 120, 247);
+  color: black;
+}
+
+.shortcuts {
+  margin-top: 30px;
+  width: 60vw;
+}
+
+.shortcuts h2 {
+  margin-bottom: 10px;
+}
+
+.shortcut-list {
+  list-style: none;
+  padding: 0;
+}
+
+.shortcut-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shortcut-list li:last-child {
+  border-bottom: none;
+}
+
+.shortcut-list li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff5555;
+}
+#addShortcutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  width: 100%; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+}
+
+#addShortcutBtn:hover {
+  color: #007bff;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style inputs in the modal */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+/* Style the button in the modal */
+#saveShortcutBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#saveShortcutBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Style the icon */
+.shortcut-icon {
+  width: 30px; /* Adjust the size as needed */
+  height: auto;
+  margin-left: 6px;
+  border-radius: 50%;
+}
