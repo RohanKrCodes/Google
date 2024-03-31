@@ -5,15 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customized Google Search</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
   <body>
+    <nav>
+      <div class="img">
+        <img
+          class="logo"
+          src="https://i.ibb.co/j5SSTwZ/Artificial-intelligence-digital-technology-concept-young-boy-showing-finger-on-transparent-screen-ve.jpg"
+          alt=""
+        />
+        <div class="overlay">Rohan Kumar</div>
+      </div>
+      <div class="social">
+        <div class="sm">
+          <a href="https://www.youtube.com/@Rohankr.48"
+            ><i
+              style="font-size: 24px; color: rgb(239, 44, 44)"
+              class="fab fa-youtube"
+            ></i>
+          </a>
+        </div>
+        <div class="sm">
+          <a href="https://www.linkedin.com/feed/"
+            ><i
+              style="font-size: 24px; color: rgb(34, 125, 237)"
+              class="fab fa-linkedin"
+            ></i>
+          </a>
+        </div>
+        <div class="sm">
+          <a href="https://www.instagram.com/rohankr.48/"
+            ><i
+              style="font-size: 24px; color: rgb(248, 31, 186)"
+              class="fab fa-instagram"
+            ></i>
+          </a>
+        </div>
+        <div class="sm">
+          <a href="https://github.com/RohanKrCodes"
+            ><i
+              style="font-size: 24px; color: rgb(45, 45, 45)"
+              class="fab fa-github"
+            ></i>
+          </a>
+        </div>
+        <div class="sms">
+          <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+            ><img
+              class="gmail"
+              style="width: 24px; text-align: center"
+              src="https://img.icons8.com/?size=48&id=qyRpAggnV0zH&format=png"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="code">
-        <h1>I ❤️ Coding</h1>
+      <div class="lottie">
+        <dotlottie-player
+          src="https://lottie.host/17233232-81d2-482a-b54f-224a12b50952/RpN0sMpqPA.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay
+        ></dotlottie-player>
+        <div class="code">
+          <h1>I ❤️ Coding</h1>
+        </div>
       </div>
       <form
         id="searchForm"
@@ -21,13 +89,21 @@
         method="get"
         target="_blank"
       >
+        <button class="google">
+          <i class="fab fa-google"></i>
+        </button>
         <input
           type="text"
           id="searchInput"
           name="q"
           placeholder="Search anything..."
         />
-        <button class="btn" type="submit">Search</button>
+        <button class="search" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="btn" id="voiceSearchBtn">
+          <i class="fas fa-microphone"></i>
+        </button>
       </form>
       <div class="box" id="linksBox">
         <!-- Links will be added dynamically here -->

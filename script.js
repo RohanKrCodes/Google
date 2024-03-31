@@ -43,12 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const li = document.createElement("li");
     li.innerHTML = `
         <a href="${shortcut.url}" target="_blank">
+        ${
+          shortcut.icon
+            ? `<img src="${shortcut.icon}" class="shortcut-icon">`
+            : ""
+        }
           <div class="shortcut-label">${shortcut.name}</div>
-          ${
-            shortcut.icon
-              ? `<img src="${shortcut.icon}" class="shortcut-icon">`
-              : ""
-          }
+          
         </a>
         <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
       `;
@@ -77,4 +78,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
   }
+
+  const voiceSearchBtn = document.getElementById("voiceSearchBtn");
+  const recognition = new (window.SpeechRecognition ||
+    window.webkitSpeechRecognition ||
+    window.mozSpeechRecognition ||
+    window.msSpeechRecognition)();
+
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 5;
+
+  voiceSearchBtn.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+    recognition.start();
+  });
+
+  recognition.addEventListener("result", function (event) {
+    const transcript = event.results[0][0].transcript;
+    document.getElementById("searchInput").value = transcript;
+    document.getElementById("searchForm").submit();
+  });
+
+  recognition.addEventListener("error", function (event) {
+    console.error("Speech recognition error detected: " + event.error);
+  });
 });
