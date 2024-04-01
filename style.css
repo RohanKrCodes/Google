@@ -16,7 +16,7 @@ body {
 }
 
 nav {
-  height: 120px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,16 +30,18 @@ nav {
   top: 0;
   left: 100%; /* Position to the right of the image */
   padding: 10px;
+  width: max-content;
   display: none;
   transition: opacity 0.3s ease;
   color: white;
+  animation: glow 2s infinite alternate;
   font-size: 24px;
 }
 .img:hover .overlay {
   display: block;
 }
 nav img {
-  width: 80px;
+  width: 60px;
   border-radius: 50%;
   margin-left: 15px;
 }
@@ -62,8 +64,8 @@ nav img {
 }
 
 .sm {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: #eee5e5;
   display: flex;
@@ -81,13 +83,12 @@ nav img {
     rgba(34, 34, 34, 1) 100%
   );
   width: 100%;
-  height: calc(100vh - 120px);
+  /* height: calc(100vh - 120px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
-  padding: 20px;
 }
 
 .code h1 {
@@ -95,6 +96,18 @@ nav img {
   font-family: "Dancing Script", cursive;
   text-align: center;
   animation: glowing 2s infinite alternate;
+  width: max-content;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffff66,
+      0 0 30px #ffff66, 0 0 40px #ffff66, 0 0 55px #ffff66, 0 0 75px #ffff66;
+  }
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #ffff66,
+      0 0 40px #ffff66, 0 0 50px #ffff66, 0 0 70px #ffff66, 0 0 90px #ffff66;
+  }
 }
 
 @keyframes glowing {
@@ -115,10 +128,10 @@ nav img {
 }
 .google {
   background-color: #222222;
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 500;
   color: white;
-  padding: 16px;
+  padding: 15px;
 }
 .lottie {
   display: flex;
@@ -128,7 +141,7 @@ nav img {
 }
 
 #searchInput {
-  padding: 8px;
+  padding: 5px;
   border-radius: 10px;
   width: 60vw;
   font-size: 16px;
@@ -137,26 +150,26 @@ nav img {
 }
 
 .btn {
-  padding: 16px;
+  padding: 15px;
   background-color: #222;
   border: 1px solid #202020;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 500;
   color: white;
 }
 .search {
-  padding: 16px;
+  padding: 15px;
   background-color: #2d2d2d;
-  border: 1px solid rgb(22, 22, 23);
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 500;
   color: white;
 }
 
 .btn:hover,
 .search:hover {
-  background-color: rgb(51, 120, 247);
+  background-color: rgb(255, 255, 255);
   color: black;
+  border: none;
 }
 
 .shortcuts {
@@ -166,6 +179,13 @@ nav img {
 
 .shortcuts h2 {
   margin-bottom: 10px;
+}
+#shortcutsBox h2 {
+  background-image: linear-gradient(to right, #2dd5fb, #0083b0);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .shortcut-list {
