@@ -73,6 +73,10 @@ nav img {
   text-align: center;
   justify-content: center;
 }
+.sm:hover,
+.sms:hover {
+  background-color: #2e2836;
+}
 
 .container {
   background: rgb(18, 18, 18);
