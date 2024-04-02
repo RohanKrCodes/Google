@@ -32,12 +32,31 @@ nav {
   padding: 10px;
   width: max-content;
   display: none;
+  font-family: "Dancing Script", cursive;
   transition: opacity 0.3s ease;
   color: white;
   animation: glow 2s infinite alternate;
   font-size: 24px;
 }
 .img:hover .overlay {
+  display: block;
+}
+.over {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-family: "Dancing Script", cursive;
+  padding: 10px;
+  width: max-content;
+  display: none;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 18px;
+}
+.sm:hover .over {
+  display: block;
+}
+.sms:hover .over {
   display: block;
 }
 nav img {
@@ -53,6 +72,7 @@ nav img {
 .sms {
   display: flex;
   justify-content: center;
+  position: relative;
   text-align: center;
   border-radius: 50%;
   align-items: center;
@@ -68,6 +88,7 @@ nav img {
   height: 35px;
   border-radius: 50%;
   background-color: #eee5e5;
+  position: relative;
   display: flex;
   align-items: center;
   text-align: center;
